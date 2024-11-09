@@ -140,7 +140,7 @@ export function LandingPageComponent() {
       </header>
       <main className="flex-1">
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -151,8 +151,8 @@ export function LandingPageComponent() {
                     One. Integration. For. All. Identity. Needs.
                   </p>
                   <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
-                    Get normalized data and intelligent signals for enhanced
-                    fraud prevention.
+                    Integrate once, unlock multi-vendor access and smart fraud
+                    prevention signals.
                   </p>
                 </div>
               </div>
@@ -178,15 +178,16 @@ export function LandingPageComponent() {
           id="platform"
           className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
         >
-          <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter">
                   Simplify Identity Verification
                 </h2>
                 <p className="text-gray-600">
-                  Reduce integration time from months to days. Enable seamless
-                  geographic and industry expansion with our unified platform.
+                  Reduce integration time from months to minutes. Enable
+                  seamless geographic and industry expansion with our unified
+                  platform.
                 </p>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -232,7 +233,7 @@ export function LandingPageComponent() {
           </div>
         </section>
         <section id="demo" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -338,7 +339,7 @@ export function LandingPageComponent() {
           id="features"
           className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
         >
-          <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -357,19 +358,22 @@ export function LandingPageComponent() {
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">Intelligent Routing</h3>
                       <p className="text-gray-600">
-                        Configure routing to one or more vendors; Scale up and
-                        down at any time.
+                        Easily implement vendor redundancy and fallback options.
+                        Pick and choose features from various vendors, or
+                        experiment with new features without additional
+                        development time.
                       </p>
                     </div>
                   </li>
                   <li>
                     <div className="grid gap-1">
                       <h3 className="text-xl font-bold">
-                        Single integration to connect to all vendors
+                        Single Integration - Multiple Vendors
                       </h3>
                       <p className="text-gray-600">
-                        Simplicity at its best. Connect to one or many vendors
-                        via our integrated platform.
+                        Say goodbye to the complexities of managing multiple API
+                        integrations and maintenance tasks. Connect to a wide
+                        array of vendors through a single, normalized API.
                       </p>
                     </div>
                   </li>
@@ -379,17 +383,6 @@ export function LandingPageComponent() {
                       <p className="text-gray-600">
                         No custom integrations. Always get normalized responses
                         across one or many vendors.
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="grid gap-1">
-                      <h3 className="text-xl font-bold">
-                        Multi-Vendor Platform
-                      </h3>
-                      <p className="text-gray-600">
-                        Vendor-agnostic interface with automatic failover
-                        capabilities
                       </p>
                     </div>
                   </li>
@@ -413,7 +406,7 @@ export function LandingPageComponent() {
           </div>
         </section>
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
