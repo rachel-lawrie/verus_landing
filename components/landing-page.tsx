@@ -148,7 +148,7 @@ export function LandingPageComponent() {
                 </h1>
                 <div className="space-y-4">
                   <p className="mx-auto max-w-[700px] text-gray-800 md:text-2xl lg:text-3xl font-semibold">
-                    One. Integration. For. All. Identity. Needs.
+                    One Integration For All Identity Needs
                   </p>
                   <p className="mx-auto max-w-[700px] text-gray-600 md:text-xl">
                     Integrate once, unlock multi-vendor access and smart fraud
@@ -391,7 +391,7 @@ export function LandingPageComponent() {
                       <h3 className="text-xl font-bold">Smart Signals</h3>
                       <p className="text-gray-600">
                         Risk-based decisions with geographic and cost
-                        optimization
+                        optimization.
                       </p>
                     </div>
                   </li>
