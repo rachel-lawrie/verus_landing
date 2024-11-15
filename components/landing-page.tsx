@@ -427,14 +427,14 @@ export function LandingPageComponent() {
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Input
-                      type="text"
+                      name="firstName"
                       placeholder="First name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     />
                   </div>
                   <div className="space-y-2">
                     <Input
-                      type="text"
+                      name="lastName"
                       placeholder="Last name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     />
@@ -443,6 +443,7 @@ export function LandingPageComponent() {
                 <div className="space-y-2">
                   <Input
                     type="email"
+                    name="email"
                     placeholder="Email"
                     className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   />
