@@ -419,16 +419,22 @@ export function LandingPageComponent() {
               </div>
             </div>
             <div className="mx-auto max-w-lg space-y-6 mt-8">
-              <form className="space-y-4">
+              <form
+                className="space-y-4"
+                action="https://formspree.io/f/meoqkdzl"
+                method="POST"
+              >
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Input
+                      type="text"
                       placeholder="First name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     />
                   </div>
                   <div className="space-y-2">
                     <Input
+                      type="text"
                       placeholder="Last name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     />
@@ -436,13 +442,14 @@ export function LandingPageComponent() {
                 </div>
                 <div className="space-y-2">
                   <Input
-                    placeholder="Email"
                     type="email"
+                    placeholder="Email"
                     className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   />
                 </div>
                 <div className="space-y-2">
                   <Textarea
+                    type="message"
                     className="min-h-[100px] bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     placeholder="Message"
                   />
