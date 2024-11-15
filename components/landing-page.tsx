@@ -110,24 +110,30 @@ export function LandingPageComponent() {
     setIsSubmitting(true);
 
     try {
-      const formData = new FormData(e.currentTarget);
+      const form = e.currentTarget;
+      const data = new FormData(form);
+      const body = Object.fromEntries(data.entries());
+
       const response = await fetch("https://formspree.io/f/meoqkdzl", {
         method: "POST",
-        body: formData,
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify(body),
       });
 
       if (response.ok) {
         setIsSubmitted(true);
-        e.currentTarget.reset(); // Clear the form
+        form.reset();
+        // Maybe add a success message
+        console.log("Form submitted successfully");
       } else {
         throw new Error("Form submission failed");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Sorry, there was a problem submitting your form");
+      setIsSubmitted(false);
     } finally {
       setIsSubmitting(false);
     }
