@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -102,6 +102,36 @@ const multiVendorResponse = {
 export function LandingPageComponent() {
   const [isMultiVendor, setIsMultiVendor] = useState(false);
   const [showConfig, setShowConfig] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      const response = await fetch("https://formspree.io/f/meoqkdzl", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        e.currentTarget.reset(); // Clear the form
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Sorry, there was a problem submitting your form");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div
@@ -419,24 +449,29 @@ export function LandingPageComponent() {
               </div>
             </div>
             <div className="mx-auto max-w-lg space-y-6 mt-8">
-              <form
-                className="space-y-4"
-                action="https://formspree.io/f/meoqkdzl"
-                method="POST"
-              >
+              {isSubmitted && (
+                <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-md border border-green-500">
+                  Thank you for your message! We&apos;ll get back to you soon.
+                </div>
+              )}
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Input
+                      type="text"
                       name="firstName"
                       placeholder="First name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                      required
                     />
                   </div>
                   <div className="space-y-2">
                     <Input
+                      type="text"
                       name="lastName"
                       placeholder="Last name"
                       className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                      required
                     />
                   </div>
                 </div>
@@ -446,20 +481,23 @@ export function LandingPageComponent() {
                     name="email"
                     placeholder="Email"
                     className="bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                    required
                   />
                 </div>
                 <div className="space-y-2">
                   <Textarea
                     name="message"
-                    className="min-h-[100px] bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     placeholder="Message"
+                    className="min-h-[100px] bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                    required
                   />
                 </div>
                 <Button
                   className="w-full bg-gray-900 text-white hover:bg-gray-700"
                   type="submit"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
