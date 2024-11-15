@@ -449,7 +449,7 @@ export function LandingPageComponent() {
                 </div>
                 <div className="space-y-2">
                   <Textarea
-                    type="message"
+                    name="message"
                     className="min-h-[100px] bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                     placeholder="Message"
                   />
